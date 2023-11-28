@@ -30,5 +30,6 @@ jobs:
       with:
         name: layout-compare
         path: tests-selfmade-project-4-public/output.jpg
+
     - name: Show test results
       run: bash tests-selfmade-project-4-public/result.sh
