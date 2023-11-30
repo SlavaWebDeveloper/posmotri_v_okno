@@ -55,10 +55,10 @@ ol {
 
 .content {
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   gap: 0 30px;
-  width: 100%;
-  max-width: 1140px;
+  width: 1140px;
   margin: auto;
 } 
 
@@ -149,7 +149,10 @@ ol {
   border: 1px solid #fff;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+.search-form__label:active + .search-form__pseudo-checkbox::before,
+.search-form__checkbox:active + .search-form__pseudo-checkbox::before,
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before
+ {
   content: ''; 
   display: flex;
   align-items: center;
@@ -166,7 +169,7 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
-  gap: 19px 0;
+  gap: 20px 0;
 }
 
 .title {
@@ -183,9 +186,10 @@ ol {
 
 .content__list {
   position: relative;
-  height: 298px;
-  max-width: 399px;
-  overflow: auto;
+  height: 300px;
+  min-width: 398px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .content__list-item{
@@ -198,13 +202,16 @@ ol {
 
 .content__card-link {
   display: block;
-  margin: 5px;
   color: #fff;
   text-decoration: none;
+  margin: 3px;
+  height: 100%;
+  background-color: transparent;
 }
 
 .content__card-link:active {
   background-color: #545050;
+  text-decoration: none;
 }
 
 .content__card-link:has(:focus-visible) {
@@ -220,18 +227,12 @@ ol {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 1px;
-  margin-right: -2px;
-  height: 107px;
 }
 
 .content__video-card-description-container {
   align-self: flex-start;
   overflow: hidden;
-}
-
-.content__list::-webkit-scrollbar {
-  display: none; 
+  padding-top: 4px;
 }
 
 .content__video-card-title {
@@ -239,6 +240,7 @@ ol {
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .content__video-card-description {
@@ -247,14 +249,11 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
+  width: 178px;
+  height: 107px;
+  padding: 2px 0;
   object-fit: cover;
   object-position: center;
-}
-
-.content__card-link:active {
-  text-decoration: none;
 }
 
 /*-- Section button  --*/
@@ -290,5 +289,4 @@ ol {
 .more-button:focus-visible {
   outline-offset: -4px;
 }
-
 /*-- End section button  --*/
